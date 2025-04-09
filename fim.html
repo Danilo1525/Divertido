@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Acabou, mas foi massa 😎</title>
+    <link rel="stylesheet" href="stylefim.css" />
+  </head>
+  <body>
+    <h1>🚀 Fim da missão!</h1>
+    <p>
+      Se você chegou até aqui, parabéns! Você desbloqueou o nível
+      <strong>"JOGADORA BRABA"</strong> 🎮<br />
+      Isso aqui foi feito do nada, espero que tenha pelo menos achado divertido.
+    </p>
+    <p style="margin-top: 10px">
+      Agora pode seguir com a vida ou me zoar no zap... tanto faz 😂
+    </p>
+
+    <button class="btn" onclick="mostrarSurpresa()">Jogar de novo? 🔁</button>
+
+    <script>
+      const emojis = ["🍕", "😎", "🎮", "🌈"];
+      setInterval(() => {
+        const emoji = document.createElement("div");
+        emoji.classList.add("emojiRain");
+        emoji.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+        emoji.style.left = Math.random() * 100 + "vw";
+        emoji.style.animationDuration = 3 + Math.random() * 2 + "s";
+        document.body.appendChild(emoji);
+        setTimeout(() => emoji.remove(), 6000);
+      }, 300);
+
+      function mostrarSurpresa() {
+        const box = document.createElement("div");
+        box.className = "surpriseBox";
+        box.innerText =
+          "Você passou de fase com estilo! E sim, você é incrível 😎✨";
+
+        document.body.appendChild(box);
+
+        for (let i = 0; i < 15; i++) {
+          const heart = document.createElement("div");
+          heart.className = "heart";
+          heart.innerText = "💗";
+          heart.style.left = Math.random() * 100 + "vw";
+          heart.style.top = "80%";
+          heart.style.animationDuration = 2 + Math.random() + "s";
+          document.body.appendChild(heart);
+          setTimeout(() => heart.remove(), 3000);
+        }
+
+        setTimeout(() => {
+          window.location.href = "index.html";
+        }, 4000); // Espera 4 segundos antes de redirecionar
+      }
+    </script>
+  </body>
+</html>

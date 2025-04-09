@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Desafio Interativo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Fase 1: Pergunta Aleatória -->
+    <div class="container" id="phase1">
+      <h1>🎲 Primeiro Desafio</h1>
+      <p>Se você ganhasse um superpoder por um dia, seria:</p>
+      <div class="options">
+        <button class="option-btn" onclick="selectAnswer('🦸‍♀️ Voar')">
+          🦸‍♀️ Voar
+        </button>
+        <button class="option-btn" onclick="selectAnswer('🧠 Ler mentes')">
+          🧠 Ler mentes
+        </button>
+        <button
+          class="option-btn"
+          onclick="selectAnswer('🍕 Criar pizza do nada')"
+        >
+          🍕 Criar pizza
+        </button>
+      </div>
+    </div>
+
+    <!-- Fase 2: Jogo do Intruso -->
+    <div class="container hidden" id="phase2">
+      <h1>🔍 Qual é o Intruso?</h1>
+      <p>Selecione o item que não combina com o grupo:</p>
+      <div class="options">
+        <button class="option-btn" onclick="checkIntruder('🍕', false)">
+          🍕 Pizza
+        </button>
+        <button class="option-btn" onclick="checkIntruder('🍔', false)">
+          🍔 Hambúrguer
+        </button>
+        <button class="option-btn" onclick="checkIntruder('🍣', false)">
+          🍣 Sushi
+        </button>
+        <button class="option-btn" onclick="checkIntruder('📚', true)">
+          📚 Livro
+        </button>
+      </div>
+      <p id="hint"></p>
+    </div>
+
+    <!-- Fase 3: Pergunta Divertida -->
+    <div class="container hidden" id="phase3">
+      <h1>🤔 Último Desafio!</h1>
+      <p>Complete a frase:</p>
+      <p>"Se os animais falassem, o _____ seria o mais sarcástico."</p>
+      <input
+        type="text"
+        id="animalAnswer"
+        placeholder="Digite qualquer animal"
+      />
+      <button onclick="finalCheck()">Enviar</button>
+      <p id="finalHint" style="font-size: 0.8em; color: #666">
+        (Qualquer animal vale, seja criativo!)
+      </p>
+    </div>
+
+    <!-- Mensagem Final -->
+    <div class="container hidden" id="finalMessage">
+      <h1>✨ Você Conseguiu! ✨</h1>
+
+      <!-- Nome com efeitos especiais -->
+      <!-- <div class="name-container">
+        <div class="special-name" id="jamilyName">
+          <span class="letter">J</span>
+          <span class="letter">A</span>
+          <span class="letter">M</span>
+          <span class="letter">I</span>
+          <span class="letter">L</span>
+          <span class="letter">Y</span>
+        </div>
+      </div> -->
+
+      <p>Fiz isso espero que tenha pelo menos achado divertido.</p>
+      <p>Se quiser me dizer o que achou, só mandar no WhatsApp</p>
+      <p>
+        Ah, e se um dia quiser um correio elegante com chocolate, é só dar um 🍫
+        de resposta!
+      </p>
+
+      <div
+        style="
+          margin-top: 25px;
+          padding: 12px;
+          background: #fff5f7;
+          border-radius: 10px;
+          border-left: 4px solid #ff85a2;
+        "
+      >
+        <p style="margin: 0; font-size: 0.9em">
+          💬 Foi mal se isso pareceu meio tosco ou sem graça...
+        </p>
+        <p style="margin: 8px 0 0 0; font-size: 0.9em">
+          É que vergonha e timidez são f*das mesmo, sabe? 😅
+        </p>
+        <p style="margin-top: 20px">
+          Ah, e só pra deixar claro: não sei se isso pareceu uma declaração ou
+          algo assim, mas na real, pode ser só um gesto de carinho mesmo. Se
+          quiser ser só amizade, já tá incrível também!
+        </p>
+        <p style="margin-top: 10px">
+          Eu tô focado nos estudos, mas achei que seria legal tentar, nem que
+          fosse só pra virar uma amizade.
+        </p>
+      </div>
+      <p style="margin-top: 20px; font-style: italic; color: #444">
+        Você decide se quer seguir ou parar aqui. Mas aviso: o final pode te
+        surpreender (ou te arrancar um sorriso).
+      </p>
+
+      <button id="specialBtn" onclick="finalizarComSurpresa()">FIM ✨</button>
+
+      <p style="margin-top: 10px; font-style: italic">
+        (Brincadeiras à parte, foi divertido fazer isso aqui! ✌️)
+      </p>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
